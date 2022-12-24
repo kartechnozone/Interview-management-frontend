@@ -1,0 +1,47 @@
+<!-- <p>candidatelist works!</p> -->
+<div class='card'>
+    <div class='card-header'>
+        {{pageTitle}}
+    </div>
+    <div class='card-body'>
+        <div class='row'>
+            <div class='col-md-2'>Filter by:</div>
+            <div class='col-md-4'>
+                <input type='text' [(ngModel)]='listFilter' />
+            </div>
+        </div>
+        <div class='row' *ngIf='listFilter'>
+            <div class='col-md-6'>
+                <h4>Filtered by: {{listFilter}}</h4>
+            </div>
+        </div>
+
+        <div class="row" *ngIf='candidates.length'>
+            <div class="col-sm-4" *ngFor="let candidate of filteredCandidates">
+                <div class="card mb-3">
+                    <div class='card-header'>
+                        <h1 class="fs-5"> {{ candidate.name }} </h1>
+                    </div>
+                    <div class="card-body">
+                        <!-- <h5 class="card-title">{{ candidate.name }}
+                        </h5> -->
+                        <p class="card-text">ID: {{candidate.id}} <br>
+                            Name: {{ candidate.name }} <br>
+                            Email: {{ candidate.email}} <br>
+                            Mobile: {{ candidate.mobile}} <br>
+                            Entry Type: {{candidate.entry_type}} <br>
+                        </p>
+                        <!-- <a [routerLink]="['/employees', employee.id]" class="btn btn-primary">Update</a> -->
+                    </div>
+                    <div class='card-footer'>
+                        <a [routerLink]="['/candidate', candidate.id]" class="btn btn-primary">Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div *ngIf='errorMessage' class='alert alert-danger'>
+    Error: {{ errorMessage }}
+</div> -->

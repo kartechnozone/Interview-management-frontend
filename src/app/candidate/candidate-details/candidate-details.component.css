@@ -1,0 +1,11 @@
+ngb-rating {
+  color: black;
+  font-size: 15px;
+}
+sr-only {
+  color: white !important;
+}
+
+span.sr-only > * {
+  color: white !important;
+}

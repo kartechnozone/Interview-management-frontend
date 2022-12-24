@@ -1,0 +1,27 @@
+<div class='card'>
+    <div class='card-header'>
+        {{pageTitle + ': ' + stream?.name}}
+        <!-- <p>The hero's birthday is {{ candidate | json }}</p> -->
+    </div>
+
+    <div class='card-body' *ngIf='stream'>
+        <div class='row'>
+            <div class='col-md-8'>
+                <div class='row'>
+                    <div class='col-md-4'>Name:</div>
+                    <!-- <div class='col-md-8'>{{candidate | json }}</div> -->
+                    <div class='col-md-8'>{{stream.name }}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-4'>ID:</div>
+                    <div class='col-md-8'>{{stream.id }}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-4'>Description:</div>
+                    <div class='col-md-8'>{{stream.description}}</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

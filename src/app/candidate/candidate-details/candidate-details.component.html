@@ -1,0 +1,88 @@
+<div class='card'>
+    <div class='card-header'>
+        {{pageTitle + ': ' + candidate?.name}}
+        <!-- <p>The hero's birthday is {{ candidate | json }}</p> -->
+    </div>
+
+    <div class='card-body' *ngIf='candidate'>
+        <div class='row'>
+            <div class='col-md-8'>
+                <div class='row'>
+                    <div class='col-md-4'>Name:</div>
+                    <!-- <div class='col-md-8'>{{candidate | json }}</div> -->
+                    <div class='col-md-8'>{{candidate.name }}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-4'>ID:</div>
+                    <div class='col-md-8'>{{candidate.id }}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-4'>Email:</div>
+                    <div class='col-md-8'>{{candidate.email}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-4'>Mobile:</div>
+                    <div class='col-md-8'>{{candidate.mobile}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-4'>Entry Type:</div>
+                    <div class='col-md-8'>{{candidate.entry_type}}</div>
+                </div>
+
+                <div class='row'>
+                    <div class='col-md-4'>Project:</div>
+                    <div class='col-md-8'>{{candidate.project_name}}</div>
+                </div>
+
+                <div class='row'>
+                    <div class='col-md-4'>Stream:</div>
+                    <div class='col-md-8'>{{candidate.stream_name}}</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class='table-responsive'>
+    <table class='table' *ngIf='candidate_status.length'>
+        <thead class="thead-dark">
+            <tr>
+                <!-- <th>
+                        Round ID
+                    </th>
+                    <th>Round Number</th> -->
+                <th>Round Name</th>
+                <!-- <th>Panelist ID</th> -->
+                <th>Panelist Name</th>
+                <th>Status</th>
+                <th>Rating</th>
+                <th>Remarks</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let round of candidate_status'>
+                <!-- <td>
+                        {{round.id}}
+                    </td>
+                    <td>{{ round.Round_number }}</td> -->
+                <td>{{ round.Round_name }}</td>
+                <!-- <td>{{ round.Panel_id }}</td> -->
+                <td>{{ round.Panel_member_name }}</td>
+                <td>{{ round.status }}</td>
+
+                <td>
+                    <ngb-rating [max]="5" [rate]="round.rating" [readonly]="true"> </ngb-rating>
+                </td>
+                <!-- <td>
+                        <pm-star [rating]='round.rating'>
+
+                        </pm-star>
+                    </td>  -->
+                <!-- <td>{{ round.rating }}</td> -->
+                <td>{{ round.remarks }}</td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>

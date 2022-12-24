@@ -1,0 +1,44 @@
+{ 
+
+    "/api/candidate": { 
+  
+      "target": "http://127.0.0.1:5000", 
+  
+      "secure": false, 
+  
+      "changeOrigin": true 
+  
+    },
+    "/api/project": { 
+  
+      "target": "http://127.0.0.1:5000", 
+  
+      "secure": false, 
+  
+      "changeOrigin": true 
+  
+    },
+    "/api/panelmember": { 
+  
+      "target": "http://127.0.0.1:5000", 
+  
+      "secure": false, 
+  
+      "changeOrigin": true 
+  
+    },
+    "/api/stream": { 
+  
+      "target": "http://127.0.0.1:5000", 
+  
+      "secure": false, 
+  
+      "changeOrigin": true 
+  
+    }
+
+  
+  
+ 
+  
+  } 

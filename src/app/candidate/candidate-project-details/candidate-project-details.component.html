@@ -1,0 +1,55 @@
+<div class='card'>
+    <div class='card-header'>
+        {{pageTitle + ': ' + project?.name}}
+        <!-- <p>The hero's birthday is {{ candidate | json }}</p> -->
+    </div>
+
+    <div class='card-body' *ngIf='project'>
+        <div class='row'>
+            <div class='col-md-8'>
+                <div class='row'>
+                    <div class='col-md-4'>Name:</div>
+                    <!-- <div class='col-md-8'>{{candidate | json }}</div> -->
+                    <div class='col-md-8'>{{project.name }}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-4'>ID:</div>
+                    <div class='col-md-8'>{{project.id }}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-4'>Description:</div>
+                    <div class='col-md-8'>{{project.Description}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='table-responsive'>
+        <table class='table' *ngIf='project_candidate.length'>
+            <thead>
+                <tr>
+                    <th>
+                        Candidate ID
+                    </th>
+                    <th>Candidate Name</th>
+                    <th>Entry Type</th>
+                    <th>Status</th>
+                    <th>Details</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let candidate of project_candidate'>
+                    <td>
+                        {{candidate.Candidate_id}}
+                    </td>
+                    <td>{{ candidate.Candidate_name }}</td>
+                    <td>{{ candidate.entry_type }}</td>
+                    <td>{{candidate.status_name}}</td>
+                    <td><a [routerLink]="['/candidate', candidate.Candidate_id]" class="btn btn-primary">Details</a>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
